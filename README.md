@@ -1,6 +1,7 @@
 <img src="https://raw.githubusercontent.com/ClassicMC-Studios/ClassicMC-Studios.github.io/main/jsnes.png" width="200" align="center"/>
 
-> The *worst* way to make **Javascript** games
+> The *worst* way to make **Javascript** games<br/>
+> You **MUST** include *MossJs* in the html.
 
 ### Limitations
 
