@@ -30,8 +30,8 @@ let x = 0;
 let y = 0;
 let lightY = 0;
 function move(){
-    animLight ++;
-    if(x+animLight >= 480){
+    animLight +=4;
+    if(x+animLight >= 720){
         animLight = 0;
         lgh = false;
         clearInterval(movi);
@@ -48,6 +48,16 @@ function action(button){
     }
     if(button == 'z'){
         //z
+       if(key == "l"){
+        x -= 50;
+       }else if(key == "r"){
+        x+=50;
+       }else if(key == "u"){
+        y-=50;
+       }
+       else if(key == "d"){
+        y+=50;
+       }
     }
 }
 let toDraw = 0
@@ -79,15 +89,15 @@ window.main = function(){
     requestAnimationFrame( main );
     player()
     if(key == "r"){
-        x++;
+        x+=2;
     }
     if(key == "l"){
-        x--;
+        x-=2;
     }
     if(key == "u"){
-        y--;
+        y-=2;
     }
     if(key == "d"){
-        y++;
+        y+=2;
     }
 };main();
