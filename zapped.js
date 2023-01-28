@@ -1,31 +1,69 @@
 let idle = [
-    ["white"],["#a21f1f"],["#7b0909"],["#a21f1f"],["white"],
+    ["cls"],["#a21f1f"],["#7b0909"],["#a21f1f"],["cls"],
     ["#4e0404"],["#7b0909"],["black"],["#2f1fa2"],["black"],
-    ["white"],["white"],["black"],["black"],["white"],
-    ["white"],["#7b0909"],["#a21f1f"],["#a21f1f"],["#a2671f"],
-    ["#7b0909"],["#a21f1f"],["#a21f1f"],["#a21f1f"],["white"]
+    ["cls"],["cls"],["black"],["black"],["cls"],
+    ["cls"],["#7b0909"],["#a21f1f"],["#a21f1f"],["#a2671f"],
+    ["#7b0909"],["#a21f1f"],["#a21f1f"],["#a21f1f"],["cls"]
     ]
 let moving = [
-    ["white"],["white"],["white"],["white"],["white"],
-    ["white"],["#a21f1f"],["#7b0909"],["#a21f1f"],["white"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["cls"],["#a21f1f"],["#7b0909"],["#a21f1f"],["cls"],
     ["#4e0404"],["#7b0909"],["black"],["#2f1fa2"],["black"],
-    ["white"],["#7b0909"],["black"],["black"],["white"],
+    ["cls"],["#7b0909"],["black"],["black"],["cls"],
     ["#7b0909"],["#a21f1f"],["#a21f1f"],["#a21f1f"],["#a2671f"],
     ]
 let lightning = [
-    ["white"],["white"],["white"],["white"],["white"],
-    ["white"],["#d7b900"],["white"],["#d7b900"],["white"],
-    ["#d7b900"],["white"],["#d7b900"],["white"],["#d7b900"],
-    ["white"],["white"],["white"],["white"],["white"],
-    ["white"],["white"],["white"],["white"],["white"],  
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["cls"],["#d7b900"],["cls"],["#d7b900"],["cls"],
+    ["#d7b900"],["cls"],["#d7b900"],["cls"],["#d7b900"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],  
     ]   
 let lightningMoving = [
-    ["white"],["white"],["white"],["white"],["white"],
-    ["white"],["white"],["white"],["white"],["white"],
-    ["#d7b900"],["white"],["#d7b900"],["white"],["#d7b900"],
-    ["white"],["#d7b900"],["white"],["#d7b900"],["white"],
-    ["white"],["white"],["white"],["white"],["white"],  
-    ]    
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["#d7b900"],["cls"],["#d7b900"],["cls"],["#d7b900"],
+    ["cls"],["#d7b900"],["cls"],["#d7b900"],["cls"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],  
+    ]   
+let bgLine = [
+    ["black"],["cls"],["black"],["cls"],["black"],
+    ["black"],["black"],["cls"],["black"],["black"],  
+    ["black"],["cls"],["black"],["cls"],["black"],
+    ["black"],["black"],["cls"],["black"],["black"],  
+    ["black"],["cls"],["black"],["cls"],["black"],
+] 
+let bgLineInverse = [
+    ["black"],["black"],["cls"],["black"],["black"],  
+    ["black"],["cls"],["black"],["cls"],["black"],
+    ["black"],["black"],["cls"],["black"],["black"],
+    ["black"],["cls"],["black"],["cls"],["black"],  
+    ["black"],["black"],["cls"],["black"],["black"],  
+] 
+let cls = [
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],  
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+    ["cls"],["cls"],["cls"],["cls"],["cls"],  
+    ["cls"],["cls"],["cls"],["cls"],["cls"],
+] 
+writeTileToAddress(cls);
+writeTileToAddress(bgLine);
+writeTileToAddress(bgLineInverse);
+let bgg = [
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0
+]
 let x = 0;
 let y = 0;
 let lightY = 0;
@@ -83,11 +121,13 @@ function player(){
         renderSpriteFromAddress(0,x,y);
         animate = undefined;
     }
-};player();
+}
 window.main = function(){
-    renderClear();
+    c.fillStyle = "white"
+    c.fillRect(0,0,720,480)
     requestAnimationFrame( main );
-    player()
+    renderBgFromAddress(bgg,0,0);
+    player();
     if(key == "r"){
         x+=2;
     }

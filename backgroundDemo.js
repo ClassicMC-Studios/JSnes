@@ -12,8 +12,16 @@ let ground = [
     ["green"],["green"],["green"],["green"],["green"],  
     ["green"],["green"],["green"],["green"],["green"],
 ]
+let orange = [
+  ["orange"],["orange"],["orange"],["orange"],["orange"],
+  ["orange"],["orange"],["orange"],["orange"],["orange"],  
+  ["orange"],["orange"],["orange"],["orange"],["orange"],
+  ["orange"],["orange"],["orange"],["orange"],["orange"],  
+  ["orange"],["orange"],["orange"],["orange"],["orange"],
+]
 writeTileToAddress(sky);
 writeTileToAddress(ground);
+writeTileToAddress(orange);
 let bg1 = [
 	1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
   1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -28,11 +36,8 @@ let bg1 = [
   1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
   1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 ]
-let xx = 0
-window.main = function(){
-requestAnimationFrame( main )
-xx ++
-c.fillStyle = "white"
-c.fillRect(0,0,720,480)
-renderBgFromAddress(bg1,xx,0);
+let x = 100
+function main(){
+  renderBgFromAddress(bg1,00,0);
+  renderTileFromAddress(2,100,100);
 };main();
