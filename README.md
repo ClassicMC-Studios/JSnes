@@ -7,7 +7,7 @@
 - Each screen has a set amount of Meta pixels (pixels at an 8/8 size)
 - Each sprite or tile can use an 5/5 grid of meta pixels.
 - You can save each tile and sprite to an address
--  **8** buttons available <^v> x z enter shift
+-  **6** buttons available <^v> x z
 - To draw a sprite make an array `let sprite = []`
 
 ``` js
