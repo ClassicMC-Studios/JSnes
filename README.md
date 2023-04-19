@@ -83,7 +83,7 @@ writeTileToAddress(tile);
 - Then make the background layout
 
 ```js
-let bg = [
+let bg1 = [
 	/* This draws a grid where each number
 	are used as the index for the tile previosly added.*/
 	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -101,5 +101,6 @@ let bg = [
 ]
 //You do not need to write the layout to an address
 // bg source, x position, y position
-renderBgFromAddress(bg,0,0);
+renderBgFromAddress(bg1,0,0);
+// DO NOT USE THE NAME BG FOR YOUR BACKGROUND
 ```
